@@ -1,0 +1,3 @@
+Stopped test early since no apparent progress. Did Static, light bending, medium bending, static.
+
+Dips happened at beginning of down and beginning of rest from down. I think either pads were connecting for an instant. Not sure.

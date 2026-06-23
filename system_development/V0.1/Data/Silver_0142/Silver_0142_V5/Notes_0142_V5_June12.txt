@@ -1,0 +1,5 @@
+For the rapid bending tests, a spike in resistance almost always equated to a wing bend down, and a drop in resistance almost always equated to a bend up.
+
+Test 7 is an additional fast bending test.
+
+Test 8 is also an additional fast bending test. In it, we waited a long time to see if the static resistance at the end would match the static resistance at the start. Looks like it does, but analysis will have to decide.

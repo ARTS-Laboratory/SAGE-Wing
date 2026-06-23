@@ -1,0 +1,6 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Desktop") (type "KiCad") (uri "/Users/davidstjohn/Desktop.pretty") (options "") (descr ""))
+	(lib (name "wing_pads") (type "KiCad") (uri "${KIPRJMOD}/wing_pads.pretty") (options "") (descr ""))
+	(lib (name "wing_pads") (type "KiCad") (uri "${KIPRJMOD}/wing_pads.pretty") (options "") (descr ""))
+)
