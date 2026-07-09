@@ -9,10 +9,10 @@
 clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
-lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\#Experimental Processing\Experiment 3\test5\strain_test_2.lvm";
+lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\#Experimental Processing\Experiment 3\test6\strain_test_1.lvm";
 
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'test5';
+plotTitle = 'test6';
 
 % Script settings from the original batch plotter
 headerLines = 22;
