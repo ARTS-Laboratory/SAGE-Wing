@@ -9,10 +9,10 @@
 clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
-lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\Data\Silver_0142\Silver_0142_V5\Fast_Bending_3.lvm";
+lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\#Experimental Processing\Experiment 3\test8\strain_test_1.lvm";
 
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'Fast Bending 2';
+plotTitle = 'Trial';
 
 % Script settings from the original batch plotter
 headerLines = 22;
