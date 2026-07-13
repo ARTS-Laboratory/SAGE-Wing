@@ -1,0 +1,1 @@
+This is the sensor that already has leads/pads on it. It is version 3 I think. Version 3 is the same as version 2, just with a larger pad.

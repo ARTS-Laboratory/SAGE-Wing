@@ -2,17 +2,22 @@
 % STEP 1: COPY THE FULL PATH TO THE .LVM FILE YOU WANT TO PROCESS.
 % STEP 2: PASTE THAT PATH INTO lvmFilePath BELOW.
 % STEP 3: TYPE THE PLOT TITLE YOU WANT INTO plotTitle BELOW.
-% STEP 4: RUN THIS SCRIPT.
-% STEP 5: A JPG WILL BE SAVED IN THE SAME FOLDER AS THE .LVM FILE.
+% STEP 4: CHOOSE HOW MANY SECONDS TO AVERAGE AT THE START AND END
+%         BY SETTING avgWindowSec BELOW.
+% STEP 5: RUN THIS SCRIPT.
+% STEP 6: A JPG WILL BE SAVED IN THE SAME FOLDER AS THE .LVM FILE.
 %         THE JPG FILE NAME WILL BE BASED ON YOUR PLOT TITLE.
 
 clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
-lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Carbon\Carbon_V2_1\lvm\Carbon_V2_1_ss.lvm";
+lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_0142\Silver_0142 Graphics\Version 5 Bending 3 Static\Fast_Bending_3.lvm";
 
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'Starting Static';
+plotTitle = 'Static Comparison';
+
+% USER INPUT 3: NUMBER OF SECONDS TO AVERAGE AT THE START AND END OF THE DATA
+avgWindowSec = 15;
 
 % Script settings from the original batch plotter
 headerLines = 22;
@@ -46,15 +51,40 @@ else
     yLabelText = 'Resistance (\Omega)';
 end
 
+% Compute average resistance over the first and last avgWindowSec seconds
+startMask = timeSec <= (timeSec(1) + avgWindowSec);
+endMask   = timeSec >= (timeSec(end) - avgWindowSec);
+
+startAvg = mean(plotResistance(startMask & isfinite(plotResistance)));
+endAvg   = mean(plotResistance(endMask & isfinite(plotResistance)));
+
 f = figure( ...
     'Name', plotTitle, ...
     'Color', 'w', ...
     'Units', 'Normalized', ...
     'OuterPosition', [0 0 1 1]);
 
+hold on;
+
 plot(timeSec, plotResistance, ...
     'LineWidth', 1.7, ...
     'Color', [0.85, 0.33, 0.10]);
+    xRange = timeSec(end) - timeSec(1);
+    xlim([timeSec(1), timeSec(end) + 0.18*xRange]);
+
+yline(startAvg, '--', sprintf('Start Avg = %.3f', startAvg), ...
+    'LineWidth', 1.3, ...
+    'Color', [0.00, 0.45, 0.74], ...
+    'LabelHorizontalAlignment', 'left', ...
+    'FontSize', 10);
+
+yline(endAvg, '--', sprintf('End Avg = %.3f', endAvg), ...
+    'LineWidth', 1.3, ...
+    'Color', [0.47, 0.67, 0.19], ...
+    'LabelHorizontalAlignment', 'right', ...
+    'FontSize', 10);
+
+hold off;
 
 title(plotTitle, 'FontSize', 14);
 xlabel('Time (s)', 'FontSize', 12);
@@ -73,3 +103,5 @@ outputPath = fullfile(inputFolder, [safeTitle, '.jpg']);
 exportgraphics(f, outputPath, 'Resolution', jpgResolution);
 
 fprintf('Saved JPG: %s\n', outputPath);
+fprintf('Start %.0f-second average: %.4f\n', avgWindowSec, startAvg);
+fprintf('End %.0f-second average: %.4f\n', avgWindowSec, endAvg);

@@ -9,10 +9,10 @@
 clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
-lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Carbon\Carbon_V2_1\lvm\Carbon_V2_1_ss.lvm";
+lvmFilePath = "C:\Users\dstjohn\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_0142\Silver_0142_V3\Fast Lab View _V1\strain_test_fast_1.lvm";
 
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'Starting Static';
+plotTitle = ['Bending'];
 
 % Script settings from the original batch plotter
 headerLines = 22;
