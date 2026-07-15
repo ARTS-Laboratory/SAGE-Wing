@@ -10,11 +10,9 @@ clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
 lvmFilePath = ...
-"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Carbon\Carbon_V4_2\lvm\strain_test_1.lvm";
-
-
+"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_1109\Silver_1109_V4_2\strain_test_1.lvm";
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'Starting Static';
+plotTitle = 'Final Static';
 
 % Script settings from the original batch plotter
 headerLines = 22;
