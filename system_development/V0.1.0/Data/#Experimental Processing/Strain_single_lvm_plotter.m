@@ -10,11 +10,14 @@ clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
 lvmFilePath = ...
-"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Carbon\Carbon_V4_2\lvm\strain_test_1.lvm";
+"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_0142\Silver_0142_V6\lvm\strain_test_2.lvm";
 
 
 % USER INPUT 2: NAME OF TITLE
-plotTitle = 'Starting Static';
+plotTitle = '';
+
+% USER INPUT 3: IMAGE FORMAT (Choose either 'png' or 'jpg')
+fileExtension = 'png';
 
 % Script settings from the original batch plotter
 headerLines = 22;
@@ -58,9 +61,13 @@ plot(timeSec, plotResistance, ...
     'LineWidth', 1.7, ...
     'Color', [0.85, 0.33, 0.10]);
 
+% Snap the X-axis tightly to the actual data limits
+xlim([min(timeSec), max(timeSec)]);
+
 title(plotTitle, 'FontSize', 14);
-xlabel('Time (s)', 'FontSize', 12);
-ylabel(yLabelText, 'FontSize', 12);
+xlabel('Time (s)', 'FontSize', 18);
+ylabel(yLabelText, 'FontSize', 18);
+set(gca, 'FontSize', 22);
 grid on;
 
 [inputFolder, ~, ~] = fileparts(lvmFilePath);
@@ -71,7 +78,10 @@ if isempty(safeTitle)
     safeTitle = 'strain_plot';
 end
 
-outputPath = fullfile(inputFolder, [safeTitle, '.jpg']);
+% Ensure the extension starts with a dot and is lowercase
+fileExtension = lower(strrep(fileExtension, '.', '')); 
+
+outputPath = fullfile(inputFolder, [safeTitle, '.', fileExtension]);
 exportgraphics(f, outputPath, 'Resolution', jpgResolution);
 
-fprintf('Saved JPG: %s\n', outputPath);
+fprintf('Saved %S: %s\n', upper(fileExtension), outputPath);
