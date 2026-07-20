@@ -10,7 +10,7 @@ clear; clc; close all;
 
 % USER INPUT 1: FULL PATH TO THE .LVM FILE
 lvmFilePath = ...
-"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_0142\Silver_0142_V6\lvm\strain_test_2.lvm";
+"C:\Users\dstjohn\OneDrive - University of South Carolina\Desktop\SAGE-Wing\system_development\V0.1.0\Data\Silver_0142\Silver_0142_V6\lvm\strain_test_1.lvm";
 
 
 % USER INPUT 2: NAME OF TITLE
