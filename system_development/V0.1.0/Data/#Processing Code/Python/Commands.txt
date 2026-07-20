@@ -1,0 +1,1 @@
+python C:\Users\dstjohn\.gemini\antigravity\scratch\piezo_strain_signal_processing\main.py
