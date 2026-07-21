@@ -1,0 +1,3 @@
+Tried patching Silver_v5 with copper strips at the pads. Results are really wonky. Still think it could work to repair cracks. Problem could be with the repair at the pad. 
+
+Next step: try to break one of the v3, then repair it. Or something like that I think. Or just repair it on the tire and see what happens.
