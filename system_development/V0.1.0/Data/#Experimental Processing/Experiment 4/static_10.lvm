@@ -1,0 +1,27 @@
+LabVIEW Measurement,
+Writer_Version,2
+Reader_Version,2
+Separator,Comma
+Decimal_Separator,.
+Multi_Headings,No
+X_Columns,One
+Time_Pref,Absolute
+Operator,DSTJOHN
+Date,2026/07/22
+Time,12:20:13.2574830055236816406
+***End_of_Header***,
+,
+Channels,2,,
+Samples,1,1,
+Date,2026/07/22,2026/07/22,
+Time,12:20:13.2574830055236816406,12:20:13.2574830055236816406,
+X_Dimension,Time,Time,
+X0,0.0000000000000000E+0,0.0000000000000000E+0,
+Delta_X,1.000000,1.000000,
+***End_of_Header***,,,
+X_Value,Untitled,Untitled 1,Comment
+0.000000,1.081347,1.080949
+2.017046,1.081693,1.079784
+4.026646,1.080223,1.078906
+6.035872,1.083020,1.082462
+8.027233,1.078406,1.082289

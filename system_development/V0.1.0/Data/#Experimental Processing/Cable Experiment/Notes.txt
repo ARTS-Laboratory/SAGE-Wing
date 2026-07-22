@@ -1,0 +1,10 @@
+Cable Experiment:
+Test procedure:
+1. static
+2. light bending
+3. rapid bending
+
+Analysis:
+	Contact: slight spikes on rapid bending at the beginning, I think it was user error though because didn't happen after I changed my method.
+	Coax:
+	Screw: 
